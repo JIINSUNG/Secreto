@@ -151,7 +151,7 @@ public class BoardCommandServiceImpl implements BoardCommandService {
 
                     // 유저에게 알림 발송
                     AlarmDataDto alarmDataDto = AlarmDataDto.builder()
-                            .content(writeBoardRequestDto.getContent())
+                            .content("방장이 공지를 등록하였습니다.")
                             .readYn(false)
                             .generatedAt(LocalDateTime.now())
                             .author("방장")

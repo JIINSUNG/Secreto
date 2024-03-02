@@ -217,7 +217,7 @@ public class MissionCommandServiceImpl implements MissionCommandService {
     }
 
     // 정기 미션 날리기 기능, 방 끝나는 시각에 맞게 끝내는 기능 수행 메서드
-    @Scheduled(cron = "0 0/3 0-23 * * *") // 매일 정각마다 실행
+    @Scheduled(cron = "0 0/2 0-23 * * *") // 매일 정각마다 실행
     public void throwRegularMission() {
 
         log.info("스케쥴러 발동");

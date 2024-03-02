@@ -59,9 +59,8 @@ public class ChatService {
 
             for(ChatUser cu : chatUsers) {
 
-                log.info("채팅 발생 : " + cu.getRoomUser().getNickname());
+                // 자기 자신일 경우 SSE 스킵
                 if(Objects.equals(cu.getRoomUser().getId(), chatMessageDto.getSenderId())) {
-                    log.info("스킵");
                     continue;
                 }
 
