@@ -96,21 +96,21 @@ const approvedList = computed(() => {
 })
 
 const isInvidual = ref<boolean>(false)
-const hostInGame = ref<boolean>(false)
-const missionInterval = ref<number>(7)
+const hostInGame = ref<boolean>(true)
+const missionInterval = ref<number>(1)
 const roomCode: Ref<string> = inject('roomCode', ref('testCode'))
 const dateTimeFormat = 'YYYY-MM-DD HH:mm:ss'
 const dateFormat = 'YYYY-MM-DD'
 const timeFormat = 'HH:mm:ss'
 
 const range = ref<{ start: string; end: string }>({
-    start: dayjs().add(1, 'hour').format(dateTimeFormat),
+    start: dayjs().format(dateTimeFormat),
     end: dayjs().add(1, 'day').format(dateTimeFormat)
 })
 const crange = computed(() => {
     return [dayjs(range.value.start).format(dateFormat), dayjs(range.value.end).format(dateFormat)]
 })
-const startTime = ref<string>(dayjs().add(1, 'hour').format(dateTimeFormat))
+const startTime = ref<string>(dayjs().format(dateTimeFormat))
 const computedStartTime = computed(() => dayjs(startTime.value).format(timeFormat))
 const endTime = ref<string>(dayjs().format(dateTimeFormat))
 const computedEndTime = computed(() => dayjs(endTime.value).format(timeFormat))
